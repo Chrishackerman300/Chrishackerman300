@@ -1,0 +1,26 @@
+/*..................................Floyd's Triangle...............................*/
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int main(){
+	
+	//Var
+	int i, j, rows, k=1;
+	cout<<"Ingrese la serie de filas: ";
+	cin>> rows;
+	cout<<"\n\n";
+	
+	for(i=1; i<= rows; i++)
+	{
+		for(j=1; j<=i; j++)
+		{
+			cout<< k <<" ";
+			k++;
+		}
+		cout<<"\n";
+	}
+	
+	getch();
+	return 0;
+}
