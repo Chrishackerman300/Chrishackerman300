@@ -1,0 +1,62 @@
+#include<iostream>
+#include<conio.h>
+#include<windows.h>
+using namespace std;
+
+void gotoxy(int x, int y)
+{
+  HANDLE hcon;
+  hcon= GetStdHandle(STD_OUTPUT_HANDLE);
+  COORD dwPos;
+  dwPos.X= x;
+  dwPos.Y= y;
+  SetConsoleCursorPosition(hcon, dwPos);
+}
+
+int main(){
+
+  //Personalization Console
+  system("color f0");
+  system("mode con: cols=80 lines=25");
+
+  //Var
+  int hours= 0, minutes= 0, seconds= 0;
+  bool clock= true;
+
+  while(clock)
+  {
+    if(hours < 12)
+    {
+      gotoxy(30,2); cout<< hours <<":"<< minutes <<":"<< seconds <<" AM";
+      Sleep(1000);
+    }
+    else
+    {
+      gotoxy(30,2); cout<< hours <<":"<< minutes <<":"<< seconds <<" PM";
+      Sleep(1000);
+    }
+  
+    seconds ++;
+  
+    if(seconds == 60)
+    {
+      minutes ++;
+      seconds= 0;
+    }
+   
+    if(minutes == 60)
+    {
+      hours ++;
+      minutes= 0;
+    }
+   
+    if(hours >= 24)
+    {
+      hours= 0;
+      minutes= 0;
+      seconds= 0;
+    }
+  }
+   getch();
+   return 0; 
+}
