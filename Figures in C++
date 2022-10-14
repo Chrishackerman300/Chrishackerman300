@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------FIGURES IN C++-------------------------------------------------------*/
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int main(){
+	
+	//Var
+	int i,j,rows;
+	
+	cout<<"Ingrese el numero de filas: ";
+	cin>> rows;
+	cout<<"\n";
+	
+	//Cube
+	/*for(i=0; i<rows; i++)
+	{
+		for(j=0; j<rows; j++)
+		{
+			cout<<"*";
+		}
+		cout<<"\n";
+	} */
+	
+	//Margin
+	/*for(i=0; i<rows; i++)
+	{
+		for(j=0; j<rows; j++)
+		{
+			if((i==0)||(j==0)||(i==rows-1)||(j==rows-1))
+			{
+				cout<<"*";
+			}
+			else
+			{
+				cout<<" ";
+			}
+		}
+		cout<<"\n";
+	} */
+	
+	//Triangle
+	/*for(i=0; i<rows; i++)
+	{
+		for(j=0; j<rows-i; j++)
+		{
+			cout<<" ";
+		}
+		for(j=0; j<i*2+1; j++)
+		{
+			cout<<"*";
+		}
+		cout<<"\n";
+	} */
+	
+	//Pyramid
+	/*for(i=1; i<=rows; i++)
+	{
+		for(j=1; j<=i; j++)
+		{
+			cout<<"*";
+		}
+		cout<<"\n";
+	} */
+	
+	
+	getch();
+	return 0;
+}
