@@ -1,0 +1,51 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int main(){
+
+    system("cls");
+    system("color f0");
+
+    //Var
+    string user, password, A,B;
+
+    cout<<"\t\t\tRegistrate\n";
+    cout<<"----------------------------------";
+
+    cout<<"\nIngrese un Nombre de Usuario: ";
+    getline(cin, user);
+    cout<<"\nIngrese un Password: ";
+    getline(cin, password);
+
+    //Guardando el valor de user en A y el valor de password en B
+    A= user;
+    B= password;
+
+    cout<<"\nGuardando Datos.....";
+    cout<<"\nPresione una tecla para continuar";
+    getch();
+
+    system("cls");
+
+    cout<<"\t\t\tIniciar Sesion\n";
+    cout<<"----------------------------------";
+
+    cout<<"\nIngrese su Usuario: ";
+    getline(cin, user);
+    cout<<"\nIngrese su Password: ";
+    getline(cin, password);
+
+    //Condicional IF
+    if((A== user) && (B== password))
+    {
+        cout<<"\nInicio de Sesion con Exito!";
+    }
+    else
+    {
+        cout<<"\nNombre de Usuario y/o Password Incorrectos.";
+    }
+
+    getch();
+    return 0;
+}
