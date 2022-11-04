@@ -1,0 +1,312 @@
+#include<iostream>
+#include<conio.h>
+#include<stdlib.h>
+#include<windows.h> 
+using namespace std;
+
+//Prototipos de las Funciones
+void Pregunta1();
+void Pregunta2();
+void Pregunta3();
+void Pregunta4();
+void Pregunta5();
+void Pregunta6();
+void Pregunta7();
+void Pregunta8();
+void Pregunta9();
+void Pregunta10();
+
+//Variables Globales
+char respuesta;
+int Rcorrec=0, Rincorrec=0;
+
+int main(){
+	
+	char option;
+	system("color f0");
+	system("mode con: cols=60 lines=20");
+	
+	cout<<"\t\t.::Quiz Game::.\n";
+	cout<<"------------------------------------------------------------\n";
+	
+	cout<<"\n1.- Star Game";
+	cout<<"\n2.-Options";
+	cout<<"\n3.-Exit\n\n";
+	cin>> option;
+	
+	switch(option)
+	{
+		case '1': 
+		system("cls");
+		
+		for(int i=1; i<=1; i++)
+		{
+			cout<<"Pregunta ["<<i<<"] \n";
+			Pregunta1();
+			system("cls");
+			cout<<"Pregunta ["<<i+1<<"] \n";
+			Pregunta2();
+			system("cls");
+			cout<<"Pregunta ["<<i+2<<"] \n";
+			Pregunta3();
+			system("cls");
+			cout<<"Pregunta ["<<i+3<<"] \n";
+			Pregunta4();
+			system("cls");
+			cout<<"Pregunta ["<<i+4<<"] \n";
+			Pregunta5();
+			system("cls");
+			cout<<"Pregunta ["<<i+5<<"] \n";
+			Pregunta6();
+			system("cls");
+			cout<<"\nPregunta ["<<i+6<<"] \n";
+			Pregunta7();
+			system("cls");
+			cout<<"\nPregunta ["<<i+7<<"] \n";
+			Pregunta8();
+			system("cls");
+			cout<<"\nPregunta ["<<i+8<<"] \n";
+			Pregunta9();
+			system("cls");
+			cout<<"\nPregunta ["<<i+9<<"] \n";
+			Pregunta10();
+		}
+		
+		cout<<"\n\n\t\tResultados: \n";
+		cout<<"------------------------------------------------------------\n";
+		cout<<"\nRespuestas Correctas: "<< Rcorrec;
+		cout<<"\nRespuestas Incorrectas: "<< Rincorrec;
+		cout<<"\nADIOS";
+		break;
+		
+		case '2':
+			system("cls");
+			cout<<"\t\t\tOptions\n\n";
+			cout<<"\nInstrucciones: \n";
+			cout<<"------------------------------------------------------------\n";
+			cout<<"\nEL juego consiste en 10 preguntas de cultura general que son conocidas, con diferentes opciones, ndebra ingresar las opciones que usted crea que son correctas.\n";
+			cout<<"\nY al final mostrara su puntaje que obtuvo.";
+			break;
+			
+			case '3':
+				cout<<"\nSaliendo...";
+				Sleep(900);
+				exit(0);
+				break;
+	}
+	
+	getch();
+	return 0;
+}
+
+void Pregunta1()
+{
+	cout<<"\nCual es la Capital de Francia ";
+	cout<<"\na) Paris \tb)Monaco";
+	cout<<"\nc)Tokyio \td)Silverstone\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'a')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUES ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta2()
+{
+	cout<<"\nEn que Mes se celebra la Independencia de Mexico";
+	cout<<"\na) Mayo \t b) Julio";
+	cout<<"\nc) Septiembre \t d) Octubre\n";
+	cout<<"\nIngrese el Iniciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'c')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta3()
+{
+	cout<<"\nQue fecha se celebra Navidad";
+	cout<<"\na) 15 de Diciembre \t b) 24 de Diciembre";
+	cout<<"\nc) 31 de Diciembre \t d) 25 de Diciembre\n";
+	cout<<"\nIngrese el Incisio de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'd')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+	
+}
+
+void Pregunta4()
+{
+	cout<<"\nEn que anio salio al mercado la Apple Macintosh";
+	cout<<"\na) 1980 \t b)1984";
+	cout<<"\nc) 1985 \t c)1989\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'b')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta5()
+{
+	cout<<"\nEn que anio se creo Microsoft";
+	cout<<"\na) 1970 \t b)1973";
+	cout<<"\nc) 1974 \t d)1975\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'd')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta6()
+{
+	cout<<"\nEn que anio se lanzo al mercado el primer XBOX";
+	cout<<"\na) 1999 \t b) 2001";
+	cout<<"\nc) 2000 \t d) 2002\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'b')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta7()
+{
+	cout<<"\nQue hay en tu cuarto";
+	cout<<"\na) Una cama, muebles y escritorio \t b) Miercoles";
+	cout<<"\nc) Un parque \t d) Me duele la cabeza!\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'a')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta8()
+{
+	cout<<"\nCuantos dias tiene una semana";
+	cout<<"\na) 4 Dias \t b) 5 Dias";
+	cout<<"\nc) 6 Dias \t d) 7 Dias\n";
+	cout<<"\nIngese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'd')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta9()
+{
+	cout<<"\nYo tengo que______mi ropa sucia el viernes";
+	cout<<"\na)Lavar \t b)Lavo\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'a')
+	{
+		cout<<"\nLA RESPUESTA ES CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+void Pregunta10()
+{
+	cout<<"\nLa integrla de 3+x^2 da como resultado";
+	cout<<"\na) x + x^3 + C \t b)3x + x^3/3 + C";
+	cout<<"\nc) 3x + x^4/4 + C \t d) x + x^4 + C\n";
+	cout<<"\nIngrese el Inciso de la Pregunta: ";
+	cin>> respuesta;
+	
+	if(respuesta == 'a' || respuesta == 'b')
+	{
+		cout<<"\nLA RESPUESTA EN CORRECTA!!";
+		Rcorrec++;
+	}
+	else
+	{
+		cout<<"\nLA RESPUESTA ES INCORRECTA.";
+		Rincorrec++;
+	}
+	Sleep(1000);
+}
+
+/*Program made by Chrishackerman3000*/
