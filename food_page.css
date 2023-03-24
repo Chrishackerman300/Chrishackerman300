@@ -482,6 +482,13 @@ button:hover{
     border-radius: 50%;
 }
 
+.programmer{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Poppins';
+    color: #fff;
+}
+
 .container__footer-wave{
     width: 100%;
     position: relative;
