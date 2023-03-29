@@ -52,16 +52,19 @@ body{
         font-size: 1.5rem;
         font-weight: bold;
         font-family: 'Poppins';
+        background-color: #E74C3C;
         color: #fff;
+        width: 90%;
+        border-radius: 10px;
         margin-bottom: 20px;
-        text-align: center;
         list-style: none;
         transition: all .3s ease;
         cursor: pointer;
     }
 
     .list:hover{
-        color: #2E4053;
+        color: #E74C3C;
+        background-color: #fff;
     }
 
     .menu.active{
