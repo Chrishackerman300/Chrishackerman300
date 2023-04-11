@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Landing Page</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container-title">
+            <h1 class="header-title">ProgramadorJS</h1>
+        </div>
+
+        <nav class="menu">
+            <ul class="ul">
+                <a href="#" class="links"><li class="lista">Inicio</li></a>
+                <a href="#" class="links"><li class="lista">Cursos</li></a>
+                <a href="#" class="links"><li class="lista">Contenido</li></a>
+                <a href="#" class="links"><li class="lista">Contactame</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section1">
+        <div class="section1__container">
+            <div class="section1__container-title">
+                <h2 class="section1-title">Bienvenido a ProgramadorJS Web</h2>
+                <p class="section1-title-parrafo">
+                    Soy ProgramadorJS y está es mi pagina web. Donde encontraras, proyectos mios, webs, cursos de programación, mi experiencia laboral y todo lo que puedo hacer como
+                    Ingeniero de Software y Full-Stack.
+                </p>
+
+                <div class="section1__container-button">
+                    <a href="#" class="section1-links">Acerca de Mi</a><a href="#" class="section1-links2">Ver Cursos</a>
+                </div>
+            </div>
+
+            <div class="section1__container-img">
+                <img src="https://o.remove.bg/downloads/a2c7a501-05a5-4d7a-aa37-1e80dcec21c1/photo-1552058544-f2b08422138a-removebg-preview.png" alt="me" class="person-img">
+            </div>
+        </div>
+
+        <div class="section1-wave">
+            <svg class="wave" id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(243.593, 243.593, 243.593, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,96L48,84C96,72,192,48,288,40C384,32,480,40,576,50C672,60,768,72,864,66C960,60,1056,36,1152,28C1248,20,1344,28,1440,40C1536,52,1632,68,1728,72C1824,76,1920,68,2016,62C2112,56,2208,52,2304,60C2400,68,2496,88,2592,88C2688,88,2784,68,2880,62C2976,56,3072,64,3168,72C3264,80,3360,88,3456,78C3552,68,3648,40,3744,34C3840,28,3936,44,4032,52C4128,60,4224,60,4320,62C4416,64,4512,68,4608,62C4704,56,4800,40,4896,40C4992,40,5088,56,5184,58C5280,60,5376,48,5472,50C5568,52,5664,68,5760,72C5856,76,5952,68,6048,68C6144,68,6240,76,6336,74C6432,72,6528,60,6624,50C6720,40,6816,32,6864,28L6912,24L6912,120L6864,120C6816,120,6720,120,6624,120C6528,120,6432,120,6336,120C6240,120,6144,120,6048,120C5952,120,5856,120,5760,120C5664,120,5568,120,5472,120C5376,120,5280,120,5184,120C5088,120,4992,120,4896,120C4800,120,4704,120,4608,120C4512,120,4416,120,4320,120C4224,120,4128,120,4032,120C3936,120,3840,120,3744,120C3648,120,3552,120,3456,120C3360,120,3264,120,3168,120C3072,120,2976,120,2880,120C2784,120,2688,120,2592,120C2496,120,2400,120,2304,120C2208,120,2112,120,2016,120C1920,120,1824,120,1728,120C1632,120,1536,120,1440,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path></svg>
+        </div>
+    </section>
+</body>
+</html>
