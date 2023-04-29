@@ -53,3 +53,69 @@ int main(){
 		cout<<"\nEl numero de Fila["<<pos_i<<"] y Columna["<<pos_j<<"].";
 		cout<<"\nAlmacena el numero: "<< mrt[pos_i][pos_j];
 	}
+	
+		/*2.- Ingresa a la posicion de la fila y columna por medio de ptrs
+	y ver que elementos almacena dicha fila y columna.*/
+	
+	int **mrt,nFilas,nColumnas;
+	
+	cout<<"Ingresa el numero de Filas: ";
+	cin>> nFilas;
+	cout<<"\nIngresa el numero de Columnas: ";
+	cin>> nColumnas;
+	
+	mrt = new int*[nFilas];
+	for(int i=0; i<nFilas; i++){
+		mrt[i] = new int[nColumnas];
+	}
+	
+	for(int i=0; i<nFilas; i++){
+		for(int j=0; j<nColumnas; j++){
+			cout<<"\nIngresa un numero["<<i<<"]["<<j<<"]: ";
+			cin>> *(*(mrt+i)+j);
+		}
+	}
+	
+	cout<<"\nLa Matriz es: \n";
+	for(int i=0; i<nFilas; i++){
+		for(int j=0; j<nColumnas; j++){
+			cout<<*(*(mrt+i)+j)<<" ";
+		}
+		cout<<"\n";
+	}
+	
+	int buscar_i, pos_i, buscar_j, pos_j, *dir_buscari, *dir_buscarj;
+	bool search= false;
+	
+	cout<<"\nIngresa la Posicion de Fila a ingresar: ";
+	cin>> buscar_i;
+	dir_buscari= &buscar_i;
+	cout<<"\nIngresa la Posicion de Columna a ingresar: ";
+	cin>> buscar_j;
+	dir_buscarj= &buscar_j;
+	
+	for(int i=0; i<nFilas; i++){
+		for(int j=0; j<nColumnas; j++){
+			if((i == *(dir_buscari)) & (j == *(dir_buscarj))){
+				pos_i= i;
+				pos_j= j;
+				search= true;
+				break;
+			}
+		}
+	}
+	
+	if(search == true){
+		cout<<"\nLa Fila["<<pos_i<<"] y la Columna["<<pos_j<<"].";
+		cout<<"\nAlmacena el numero: "<< *(*(mrt+pos_i)+pos_j);
+	}
+	else{
+		cout<<"\nLa Posicion de la Fila y/o Columna son invalidas!";
+	}
+	
+	cout<<"\n\nLiberando Memoria. Por favor espere.....";
+	for(int i=0; i<nFilas; i++){
+		delete[] mrt[i];
+	}
+	
+	delete[] mrt;
