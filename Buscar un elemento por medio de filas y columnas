@@ -1,0 +1,55 @@
+#include<iostream>
+#include<conio.h>
+#include<stdlib.h>
+using namespace std;
+
+int main(){
+	
+	/*Ingresar a la posicion de la fila y columna
+	y ver que elementos almacena dicha fila y columna*/
+	
+	int mrt[100][100], filas, columnas;
+
+	cout<<"Ingrese el numero de columnas: ";
+	cin>> columnas;
+	cout<<"\nIngrese el numero de filas: ";
+	cin>> filas;
+	
+	for(int i=0; i<filas; i++){
+		for(int j=0; j<columnas; j++){
+			cout<<"\nIngrese un numero["<<i<<"]["<<j<<"]: ";
+			cin>> mrt[i][j];
+		}
+	}
+	
+	cout<<"\n";
+	
+	for(int i=0; i<filas; i++){
+		for(int j=0; j<columnas; j++){
+			cout<<mrt[i][j]<<" ";
+		}
+		cout<<"\n";
+	}
+	
+	int buscar_i, buscar_j, pos_i, pos_j;
+	bool search= false;
+	
+	cout<<"\nIngrese el numero de fila de posicion a buscar: ";
+	cin>> buscar_i;
+	cout<<"\nIngrese el numero de columa de la fila a buscar: ";
+	cin>> buscar_j;
+	for(int i=0; i<filas; i++){
+		for(int j=0; j<columnas; j++){
+			if((i == buscar_i) & (j == buscar_j)){
+				pos_i= i;
+				pos_j= j;
+				search= true;
+				break;
+			}
+		}
+	}
+	
+	if(search == true){
+		cout<<"\nEl numero de Fila["<<pos_i<<"] y Columna["<<pos_j<<"].";
+		cout<<"\nAlmacena el numero: "<< mrt[pos_i][pos_j];
+	}
