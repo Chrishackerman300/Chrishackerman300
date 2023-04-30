@@ -1,0 +1,38 @@
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+int main(){
+	
+	//Varaibles
+	int mrt[5][7], dias= 1;
+	string Dias[]={"Lun","Mar","Mie","Jue","Vie","Sab","Dom"};
+	
+	cout<<"\t\t\t\t\tCalendario Version 1.\n";
+	
+	cout<<"\nMayo: \n";
+	for(int i=0; i<7; i++){
+		cout<<Dias[i]<<" ";
+	}
+	cout<<"\n";
+	
+	for(int i=0; i<5; i++){
+		for(int j=0; j<7; j++){
+			if(dias <= 31){
+				mrt[i][j]= dias;
+				cout<<mrt[i][j]<<" ";
+				dias++;
+				if(dias<10){
+					cout<<"  ";
+				}
+				else{
+					cout<<" ";
+				}
+			}
+		}
+		cout<<"\n";
+	}
+	getch();
+	return 0;
+}
