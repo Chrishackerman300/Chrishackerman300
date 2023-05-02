@@ -4,26 +4,24 @@
 using namespace std;
 
 int main(){
-	
-	//Varaibles
-	int mrt[5][7], dias= 1;
+	int mrt[5][7], dia= 1;
 	string Dias[]={"Lun","Mar","Mie","Jue","Vie","Sab","Dom"};
 	
-	cout<<"\t\t\t\t\tCalendario Version 1.\n";
+	cout<<"\tCalendario: \n";
+	cout<<"\nMayo: \n\n";
 	
-	cout<<"\nMayo: \n";
-	for(int i=0; i<7; i++){
-		cout<<Dias[i]<<" ";
+	for(int d=0; d<7; d++){
+		cout<<Dias[d]<<" ";
 	}
 	cout<<"\n";
 	
 	for(int i=0; i<5; i++){
 		for(int j=0; j<7; j++){
-			if(dias <= 31){
-				mrt[i][j]= dias;
+			if(dia <= 31){
+				mrt[i][j]= dia;
 				cout<<mrt[i][j]<<" ";
-				dias++;
-				if(dias<10){
+				dia++;
+				if(dia <= 10){
 					cout<<"  ";
 				}
 				else{
@@ -33,6 +31,7 @@ int main(){
 		}
 		cout<<"\n";
 	}
+	
 	getch();
 	return 0;
 }
