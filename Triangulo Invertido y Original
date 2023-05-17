@@ -1,0 +1,38 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int main(){
+	
+	//Variables
+	int filas;
+	
+	cout<<"Ingrese el numero de filas: ";
+	cin>>filas;
+	
+	cout<<"\n\nTriangulo Normal:\n\n";
+	
+	for(int i=0; i<filas; i++){
+		for(int j=0; j<filas-i; j++){
+			cout<<" ";
+		}
+		for(int j=0; j<(2*i+1); j++){
+			cout<<"*";
+		}
+		cout<<"\n";
+	}
+	
+	cout<<"\n\nTriangulo Invertido:\n\n";
+	for(int i=filas; i>=0; i--){
+		for(int j=0; j<filas-i+1; j++){
+			cout<<" ";
+		}
+		for(int j=0; j<(2*i-1); j++){
+			cout<<"*";
+		}
+		cout<<"\n";
+	}
+	
+	getch();
+	return 0;
+}
