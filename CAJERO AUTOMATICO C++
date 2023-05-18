@@ -1,0 +1,153 @@
+#include<iostream>
+#include<conio.h>
+#include<windows.h>
+#include<time.h>
+#include<string.h>
+using namespace std;
+
+//Prototipo de Funciones
+void Pantalla_Inicio();
+void Registro(string, string);
+
+//Varaibles Globales
+char date[9], hora[9]; //Para la fecha y hora
+string A,B,Nombre, Numero_Cuenta, Propietario, Cuenta_Banco; //Para la Validacion del usuario
+int option, Ingresar_Dinero= 0, Retirar_Dinero=0, sumaDinero=0, restaDienro=0, Total=0, Transferir=0;
+char Palabra, Exit;
+
+int main(){
+	
+	Registro(Nombre, Numero_Cuenta);
+	
+	do{
+		system("cls");
+		Pantalla_Inicio();
+		cout<<"Ingrese el numero de las siguientes opciones:\n\n";
+		cout<<"\t1.-Ingresar Dinero\n";
+		cout<<"\t2.-Retirar Dinero\n";
+		cout<<"\t3.-Trasnferir Dinero a una cuenta de Banco\n";
+		cout<<"\t4.-Ver Saldo de Cuenta\n";
+		cout<<"\t5.-Salir\n";
+		cout<<"\nIngrese una de las opciones: ";
+		cin>> option;
+			
+		switch(option){
+		
+		reinicio:
+			
+		case 1:
+			system("cls");
+			Pantalla_Inicio();
+			cout<<"\t\t\t\t\t\tIngresar Dinero\n\n";
+			cout<<"Escriba la cantidad de Dinero a Ingresar a su Cuenta: $";
+			cin>> Ingresar_Dinero;
+			Total+= Ingresar_Dinero;
+			cout<<"\n\n\tOprima 'S' si quiere salir al menu, Oprima 'R' si quiere Volver a inrgesar dinero: ";
+			cin>>Palabra;
+			Palabra= toupper(Palabra);
+			
+			if(Palabra == 'R'){
+				goto reinicio;
+			}
+			break;
+			
+			again:
+			case 2:
+				system("cls");
+				Pantalla_Inicio();
+				cout<<"\t\t\t\t\t\tRetirar Dinero\n\n";
+				cout<<"Escriba la cantidad de Dinero a Retirar a su Cuenta: $";
+				cin>> Retirar_Dinero;
+				Total-= Retirar_Dinero;
+				cout<<"\n\n\tOprima 'S' si quiere salir al menu, Oprima 'R' si quiere Volver a inrgesar dinero: ";
+				cin>>Palabra;
+				Palabra= toupper(Palabra);
+				
+				if(Palabra == 'R'){
+					goto again;
+				}
+				break;
+				
+				case 3:
+					system("cls");
+					Pantalla_Inicio();
+					cout<<"\t\t\t\t\t\tTransferencia Bancaria\n\n";
+					fflush(stdin);
+					cout<<"Escriba el Nombre del Propietario: ";
+					getline(cin,Propietario);
+					cout<<"\nEscriba el Numero de Cuenta: ";
+					getline(cin,Cuenta_Banco);
+					cout<<"\n\nIngrese la cantidad de dinero a transferir: $";
+					cin>>Transferir;
+					Total-= Transferir;
+					break;
+					
+					case 4:
+						system("cls");
+						Pantalla_Inicio();
+						cout<<"\t\t\t\t\t\tSaldo de Cuenta\n\n";
+						cout<<"Dinero Total: $"<<Total;
+						break;
+						
+						case 5:
+							exit(0);
+							break;
+		}
+		cout<<"\nOprima 0 para salir. Oprima 9 para Volver al Menu: "; cin>>Exit;
+	}while(Exit != '0');
+	
+	exit(0);
+	getch();
+	return 0;
+}
+
+void Pantalla_Inicio(){
+	_strdate(date);
+	_strtime(hora);
+	cout<<"Fecha: "<<date<<" Hora: "<<hora;
+	
+	cout<<"\t\t\tCajero Automatico";
+	
+	cout<<"\t\tBienvenido(a): "<<A<<"\n\n\tSaldo: $"<<Total<<"\n";
+	cout<<"-----------------------------------------------------------------------------------------------------------------------\n";
+}
+
+void Registro(string name, string cuenta){
+	_strdate(date);
+	_strtime(hora);
+	cout<<"Fecha: "<<date<<" Hora: "<<hora;
+	
+	cout<<"\t\t\t\tRegistro\n\n";
+	cout<<"-----------------------------------------------------------------------------------------------------------------------\n";
+	
+	cout<<"Ingrese su Nombre: ";
+	getline(cin,name);
+	
+	cout<<"\nIngrese su Numero de Cuenta solo 4 digitos: ";
+	getline(cin,cuenta);
+	
+	A= name;
+	B= cuenta;
+	
+	system("cls");
+	
+	_strdate(date);
+	_strtime(hora);
+	cout<<"Fecha: "<<date<<" Hora: "<<hora;
+	
+	cout<<"\t\t\tIngrese a Su Cuenta\n\n";
+	cout<<"-----------------------------------------------------------------------------------------------------------------------\n";
+	
+	cout<<"Ingrese su Nombre: ";
+	getline(cin,name);
+	
+	cout<<"\nIngrese su Numero de Cuenta solo 4 digitos: ";
+	getline(cin,cuenta);
+	
+	if((A == name) && (B == cuenta)){
+		cout<<"\n\nIngreso a la Cuenta con Exito!";
+	}
+	else{
+		cout<<"\n\nSu Nombre y/o Numero de Cuenta son Incorrectos.";
+	}
+}
