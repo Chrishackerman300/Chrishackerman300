@@ -1,0 +1,36 @@
+#include<iostream>
+#include<conio.h>
+#include<time.h>
+#include<stdlib.h>
+using namespace std;
+
+int main(){
+	
+	//Variables
+	int *array, cantidad= 0;
+	
+	cout<<"Ingrese la cantidad de elementos: ";
+	cin>> cantidad;
+	
+	array = new int[cantidad];
+	
+	cout<<"\n\nEl array con numeros aleatorios es:\n";
+	
+	srand(time(NULL));
+	for(int i=0; i<cantidad; i++){
+		*(array+i)= rand()%10; //Genera numeros del 0 al 9
+	}
+	
+	cout<<"\n";
+	
+	for(int i=0; i<cantidad; i++){
+		cout<<"\nEl elemento ["<<i<<"] almacena el numero: "<<*(array+i);
+	}
+	
+	cout<<"\n\nLiberando Memoria. Por favor espere.....";
+	
+	delete[] array;
+	
+	getch();
+	return 0;
+}
