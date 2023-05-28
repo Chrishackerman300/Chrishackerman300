@@ -1,0 +1,59 @@
+#include<iostream>
+#include<conio.h>
+#include<stdlib.h>
+using namespace std;
+
+int main(){
+	
+	/*Array Dinamico que pase los datos que almacenan 2 arrays dinamicos y que pase todos esos datos de los 2 array dinamicos a otro array dinamico
+		@Christian Mendoza;
+	*/
+
+	int *ptr, cantidad, *ptr2, *ptr3, cantidad2, cantidad3;
+	
+	cout<<"Ingrese la cantidad de elementos del Array 1: ";
+	cin>>cantidad;
+	
+	ptr= new int[cantidad];
+	
+	for(int i=0; i<cantidad; i++){
+		cout<<"\nIngrese un numero: ";
+		cin>>*(ptr+i);
+	}
+	
+	cout<<"\n\nIngrese la cantidad de elementos del Array 2: ";
+	cin>> cantidad2;
+	
+	ptr2= new int[cantidad2];
+	
+	for(int i=0; i<cantidad2; i++){
+		cout<<"\nIngrese un numero: ";
+		cin>>*(ptr2+i);
+	}
+	
+	cantidad3= cantidad + cantidad2;
+	
+	ptr3= new int[cantidad3];
+	
+	for(int i=0; i<cantidad; i++){
+		*(ptr3+i)= *(ptr+i);
+	}
+	
+	for(int i=cantidad2; i<cantidad3; i++){
+		*(ptr3+i)= *(ptr2+i-cantidad2);
+	}
+	
+	cout<<"\n";
+	
+	for(int i=0; i<cantidad3; i++){
+		cout<<*(ptr3+i)<<" ";
+	}
+	
+	cout<<"\n\nBorrando Memoria.";
+	delete[]ptr;
+	delete[]ptr2;
+	delete[]ptr3;
+	
+	getch();
+	return 0;
+}
