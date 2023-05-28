@@ -1,0 +1,63 @@
+/*Rellenando Array Dinamico con los elementos
+  de 2 Arrays (ProgramadorJS)*/
+
+#include<iostream>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<windows.h>
+using namespace std;
+
+int main(){
+	
+	//Variables
+	int *ptr, *ptr2, *ptr3;
+	int cant, cant2, cant3;
+	
+	cout<<"Ingrese la cantidad de Elementos del Array 1: ";
+	cin>> cant;
+	
+	ptr= new int[cant];
+	
+	srand(time(NULL));
+	for(int i=0; i<cant; i++){
+		*(ptr+i)= rand()%10;
+		//Generara numeros del 0 al 9
+	}	
+	
+	fflush(stdin);
+	
+	cout<<"\n\nIngrese los elementos del Array 2: ";
+	cin>> cant2;
+	
+	ptr2= new int[cant2];
+	
+	srand(time(NULL));
+	for(int i=0; i<cant2; i++){
+		*(ptr2+i)= rand()%8;
+	}
+	
+	cout<<"\n\nEL Array Aleatorio es: ";
+	
+	cant3= cant + cant2;
+	
+	ptr3= new int[cant3];
+	
+	for(int i=0; i<cant; i++){
+		*(ptr3+i)= *(ptr+i);
+	}
+	for(int i=cant2; i<cant3; i++){
+		*(ptr3+i)= *(ptr2+i-cant2);
+	}
+	
+	for(int i=0; i<cant3; i++){
+		cout<<*(ptr3+i)<<" ";
+	}
+	
+	delete[]ptr;
+	delete[]ptr2;
+	delete[]ptr3;
+	
+	getch();
+	return 0;
+}
