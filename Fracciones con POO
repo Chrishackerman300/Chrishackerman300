@@ -1,0 +1,99 @@
+#include<iostream>
+#include<conio.h>
+#include<windows.h>
+using namespace std;
+
+class Fracciones {
+	private: //Atributo (Caracteristicas)
+		int n1,d1,n2,d2;
+		int Numerador, Denominador;
+		int multiN1, multiN2;
+		
+	public: //Metodos (Acciones)
+		Fracciones(); //Constructor
+		void LeerDatos();
+		void Suma();
+		void Resta();
+		void Multiplicacion();
+		void Division();
+		void Mostrar();
+};
+
+//Definir el constructor
+Fracciones::Fracciones(){
+	
+}
+
+//Definir los metodos de la clase
+void Fracciones::LeerDatos(){
+	cout<<"Ingrese el valor del Numerador 1: ";
+	cin>>n1;
+	cout<<"\nIngrese el valor del Denominador 1: ";
+	cin>>d1;
+	
+	cout<<"\nIngrese el valor del Numerador 2: ";
+	cin>>n2;
+	cout<<"\nIngrese el valor del Denominador 2: ";
+	cin>>d2;
+}
+
+void Fracciones::Suma(){
+	if(d1 == d2){
+		Numerador= (n1+n2);
+		Denominador= d1;
+	}
+	else if(d1 != d2){
+		multiN1= (n1*d2);
+		multiN2= (n2*d1);
+		Denominador= (d1*d2);
+		Numerador= (multiN1+multiN2);
+	}
+}
+
+void Fracciones::Resta(){
+	if(d1 == d2){
+		Numerador= (n1+n2);
+		Denominador= d1;
+	}
+	else if(d1 != d2){
+		multiN1= (n1*d2);
+		multiN2= (n2*d1);
+		Denominador= (d1*d2);
+		Numerador= (multiN1-multiN2);
+	}
+}
+
+void Fracciones::Multiplicacion(){
+	Numerador= (n1*n2);
+	Denominador= (d1*d2);
+}
+
+void Fracciones::Division(){
+	Numerador= (n1*d2);
+	Denominador= (d1*n2);
+}
+
+void Fracciones::Mostrar(){
+	cout<<"\n\nEl resutlado de la fraccion es: "<<Numerador<<" / "<<Denominador<<endl;
+}
+
+int main(){
+	//Objeto
+	Fracciones frac;
+	
+	frac.LeerDatos();
+	frac.Suma();
+	frac.Mostrar();
+	system("pause");
+	frac.Resta();
+	frac.Mostrar();
+	system("pause");
+	frac.Multiplicacion();
+	frac.Mostrar();
+	system("pause");
+	frac.Division();frac.Mostrar();
+	system("pause");
+	
+	getch();
+	return 0;
+}
