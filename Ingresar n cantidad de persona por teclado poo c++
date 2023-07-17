@@ -1,0 +1,59 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class Persona{
+	private:
+		string nombre;
+		int edad;
+		
+	public:
+		Persona();
+		void LeerDatos(string, int);
+		void Mostrar();
+};
+
+Persona::Persona(){
+	
+}
+
+void Persona::LeerDatos(string _nombre, int _edad){
+	nombre= _nombre;
+	edad= _edad;
+}
+
+void Persona::Mostrar(){
+	cout<<"Nombre: "<<nombre<<endl;
+	cout<<"Edad: "<<edad<<" anios"<<endl;
+}
+
+int main(){
+	int cantidad, edad= 0;
+	string nombre;
+	Persona persona[100]= Persona();
+	
+	cout<<"Ingrese la cantidad de personas: ";
+	cin>>cantidad;
+
+	for(int i=0; i<cantidad; i++){
+		fflush(stdin);
+		cout<<"Ingresa tu nombre: ";
+		getline(cin,nombre);
+		cout<<"\nIngresa tu edad: ";
+		cin>>edad;
+		
+		persona[i].LeerDatos(nombre,edad);
+		cout<<"\n";
+	}
+	
+	for(int i=0; i<cantidad; i++){
+		fflush(stdin);
+		cout<<"\n\nPersona["<<i+1<<"]: ";
+		cout<<"\n------------------------------------------\n";
+		
+		persona[i].Mostrar();
+	}
+	
+	getch();
+	return 0;
+}
