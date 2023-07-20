@@ -1,0 +1,35 @@
+#include<iostream>
+#include<conio.h>
+#include<stdlib.h>
+using namespace std;
+
+int main(){
+	int *lista, cantidad= 0, suma= 0, sumMax= 0;
+	
+	cout<<"Ingrese el numero de elementos: ";
+	cin>>cantidad;
+	
+	lista= new int[cantidad];
+	
+	for(int i=0; i<cantidad; i++){
+		cout<<"\nIngresa un numero: ";
+		cin>>*(lista+i);
+	}
+	
+	cout<<"\n\nLa lista es: ";
+	for(int i=0; i<cantidad; i++){
+		cout<<*(lista+i)<<" ";
+	}
+	
+	cout<<"\n\nLa mayor suma adyacente de los elementos es: ";
+	for(int i=0; i<5-1; i++){
+		suma= lista[i]+lista[i+1];
+		
+		if(suma > sumMax){
+			sumMax= suma;
+		}
+	}
+	
+	cout<<sumMax;
+	
+	getch();
