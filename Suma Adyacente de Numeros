@@ -33,3 +33,4 @@ int main(){
 	cout<<sumMax;
 	
 	getch();
+	return 0;
