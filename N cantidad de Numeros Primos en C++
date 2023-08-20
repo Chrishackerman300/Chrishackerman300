@@ -1,0 +1,46 @@
+/*
+	N cantidad de numero primos en C++
+*/
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+//Funcion para saber si es un numero primo o no
+bool Primo(int num){
+	bool primo;
+	
+	if((num != 1) && (num != 0)){ //Si el numero es diferente de uno y de cero entra a la condicion. 
+		for(int i=2; i<=num; i++){ 
+			if(num%i == 0){ //Si el numero es divisible entre dos y su residuo es de cero entra a la siguiente condicion
+				if(num == i){ //Si el numero es igual que i. Es numero si es primo. De lo contrario no entra a esta condicion
+					primo= true;
+				}
+				else{
+					primo= false;
+					return primo;
+				}
+			}
+		}
+	}
+	else{
+		primo= false;
+	}
+	
+	return primo;
+}
+int main(){
+	int cantidad= 0;
+	
+	cout<<"Ingrese la cantidad de N numero primos: ";
+	cin>>cantidad;
+	
+	for(int i=1; i<=cantidad; i++){
+		if(Primo(i)){
+			cout<<i<<endl;
+		}
+	}
+	
+	getch();
+	return 0;
+}
