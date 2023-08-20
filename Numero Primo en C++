@@ -1,0 +1,32 @@
+/*---------------------------Como saber si un Numero es Primo o No------------------------------*/
+
+//Librerias
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int main(){
+	
+	//Varaibles
+	int numero;
+	bool primo= true;
+	
+	cout<<"Ingrese un numero: ";
+	cin>> numero;
+	
+	for(int i=2; i<numero; i++){
+		if(numero % 2 == 0){ //Si el numero es divisible esntre 2 o cualquier otro numero y su resiuo es 0. No es primo
+			primo= false;
+		}
+	}
+	
+	if(primo == true){
+		cout<<"El numero es Primo";
+	}
+	else{
+		cout<<"El numero No es Primo";
+	}
+	
+	getch();
+	return 0;
+}
