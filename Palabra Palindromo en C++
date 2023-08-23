@@ -1,0 +1,33 @@
+/*
+		Palabra Palindroma en C++
+*/
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+int main(){
+	
+	char palabra[50];
+	char palabra2[50];
+	
+	cout<<"Ingrese una Palabra: ";
+	cin.getline(palabra,50,'\n');
+	
+	//Copiando la Palabra en la variable Palabra2
+	strcpy(palabra2,palabra);
+	
+	//Invirtiendo la Palabra2
+	strrev(palabra2);
+	
+	if(strcmp(palabra,palabra2) == 0){
+		cout<<"\nLa Palabra si es Palindroma";
+	}
+	else{
+		cout<<"\nLa Palabra no es Palindroma";
+	}
+	
+	getch();
+	return 0;
+}
