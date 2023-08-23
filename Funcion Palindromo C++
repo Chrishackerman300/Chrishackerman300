@@ -1,0 +1,46 @@
+/*
+		Funcion Palabra Palindroma en C++
+*/
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+/*Hacer un programa que tenga una funcion donde debera de pasarle un parametro,
+ y esta funcion debera saber si el parametro es una palabra palindroma.
+*/
+
+bool Palindromo(char word[50]){
+	//Varaible Local
+	char word2[50];
+	
+	//Copiando el contenido del parametro a nuestra variable "word2"
+	strcpy(word2,word);
+	
+	//Invirtiendo la cadena de caracteres de la varaible "word2"
+	strrev(word2);
+	
+	//Comparando si las cadenas son iguales al reves
+	if(strcmp(word,word2) == 0){
+		cout<<"\nEs una palabra palindromo";
+		condicion= true;
+	}
+	else{
+		cout<<"\nNo es una palabra palindromo";
+		condicion= false;
+	}
+}
+
+int main(){
+	
+	//Variables
+	char palabra[50];
+	
+	cout<<"Ingrese un palabra: ";
+	cin.getline(palabra,50,'\n');
+	
+	Palindromo(palabra);
+	getch();
+	return 0;
+}
