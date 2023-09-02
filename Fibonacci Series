@@ -29,7 +29,7 @@ int main(){
 		cout<<nAnterior<<" ";
 		
 		aux= nSiguiente;
-		nSiguiente = nSiguiente + nAnterior;
+		nSiguiente += nAnterior;
 		nAnterior= aux;
 	}
 	getch();
