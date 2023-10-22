@@ -1,0 +1,58 @@
+Game in C++:
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int Game(int value){
+	for(int i= 1; i<= value; i++){
+		if((i % 3 == 0) && (i % 5 == 0)){
+			cout<<"Fizz-Buzz\n";
+		}
+		else if(i % 3 == 0){
+			cout<<"Fizz\n";
+		}
+		else if(i % 5 == 0){
+			cout<<"Buzz\n";
+		}
+		else{
+			cout<<"Input: "<<i<<"\n";
+		}
+	}
+}
+
+int main(){
+	int cantidad = 15;
+	
+	Game(cantidad);
+	
+	getch();
+	return 0;
+}
+
+Game in JavaScript:
+/*Game Fizz-Buzz
+
+    Todo nuevo divisible entre 3 mostrara la palabra Fizz, todo numero divisible entre 5 mostrara la palabra Buzz.
+    Y todo numero divisible entre 3 y 5 mostrara la palabra Fizz-Buz.
+*/
+
+//Funcion a la cual le pasaremos un parametro donde sera la n cantidad de veces que se va iterar
+function game(value){
+
+    for(let i=1; i<= value; i++){
+        if((i % 3 == 0) && (i % 5 === 0)){ //Si i es divisible entre 3 y 5 mostrara fizz-buzz
+            console.log('Fizz-Buzz')
+        }
+        else if(i % 3 === 0){ //Si i es divisible entre 3 mostrara fizz
+            console.log('Fizz')
+        }
+        else if(i % 5 === 0){ //Si i es divisible entre 5 mostrara buzz
+            console.log('Buzz')
+        }
+        else{ //Si i no es divisible entre 3 y 5 mostrara el numero de la iteracion
+            console.log(`Input: ${i}`)
+        }
+    }
+}
+
+game(15)
