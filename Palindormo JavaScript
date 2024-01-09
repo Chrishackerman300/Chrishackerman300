@@ -1,0 +1,18 @@
+function palindromo(palabra){
+    let word = palabra
+
+    console.log(word)
+
+    let wordReverse = word.split('').reverse().join('')
+
+    console.log(wordReverse)
+
+    if(word === wordReverse){
+        alert('La palabra es palindroma')
+    }
+    else{
+        alert('la palabra no es palindroma')
+    }
+}
+
+palindromo('oso')
