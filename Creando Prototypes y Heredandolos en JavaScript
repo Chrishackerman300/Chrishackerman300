@@ -1,0 +1,64 @@
+//Creando un constructor con diferentes prototypes y heredando prototypes a nuevos constructories
+
+//Constructor Banco
+function Banco(nombre, sueldo){
+    this.nombre = nombre
+    this.sueldo = sueldo
+}
+
+//Creando prototype en nuestro clase Banco
+Banco.prototype.nombreClienteSueldo = function(){
+    return `Nombre: ${this.nombre} - Sueldo: $${this.sueldo}`
+}
+
+//Constructor Persona
+function Persona(nombre, sueldo, telefono){
+
+    //Heredando los metodos de nuestra clase Banco
+    Banco.call(this, nombre , sueldo)
+    this.telefono = telefono
+}
+
+//Heredando los protypes de Banco
+Persona.prototype = Object.create(Banco.prototype)
+
+Persona.prototype.mostrarTelefono = function(){
+    return `Telefono del Trabajado: ${this.telefono}`
+}
+
+//Constructor Empresa
+function Empresa(nombre, suledo, telefono, area, experiencia){
+    Persona.call(this, nombre, suledo, telefono)
+    this.area = area
+    this.experiencia = experiencia
+}
+
+//Heredando los protypes de Persona
+Empresa.prototype = Object.create(Persona.prototype)
+
+Empresa.prototype.tipoTrabajador = function(){
+    let tipo
+
+    if(this.suledo > 10000){
+        tipo = 'Premium'
+    }
+    else if(this.sueldo > 5000){
+        tipo = 'Gold'
+    }
+    else{
+        tipo = 'Normal'
+    }
+
+    return tipo
+}
+
+Empresa.prototype.mostrarDatos = function(){
+    return `
+        ${this.nombreClienteSueldo()}  - Area: ${this.area} - Experiencia: ${this.experiencia} - Tipo de Trabajador: ${this.tipoTrabajador()} ${this.mostrarTelefono()}
+    `
+}
+
+const persona1 = new Empresa('Christian', 11000, 5579845048, 'Desarrollo de Software', 'Programador ~ Senior')
+
+console.log(persona1)
+console.log(persona1.mostrarDatos())
