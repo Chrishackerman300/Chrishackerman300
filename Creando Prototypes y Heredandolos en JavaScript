@@ -39,7 +39,7 @@ Empresa.prototype = Object.create(Persona.prototype)
 Empresa.prototype.tipoTrabajador = function(){
     let tipo
 
-    if(this.suledo > 10000){
+    if(this.sueldo > 10000){
         tipo = 'Premium'
     }
     else if(this.sueldo > 5000){
