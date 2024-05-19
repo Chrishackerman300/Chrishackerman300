@@ -1,0 +1,16 @@
+/*
+    .::Filter en JavaScript::.
+
+    El método filter es un método que se le tendrá que pasar una función o callback donde le tendremos que declarar un parámetro y la acción que este haga.
+
+    Filter se utiliza para hacer filtraciones de resultados deseados, un ejmplo filtrar un producto en una app shoping, o filtrar una propiedad de un objeto,
+    un en un array filtrar una acción deseada con dicha declaración.
+*/
+
+//Array 
+const array = [1,2,3,4,5,6,7,8,9,10]
+
+//Creamos una variable y se le asignará el valor de nuestro array con el método filter, en este caso filtrara todos los numeros que sean diferentes de el numero 5
+const resultados = array.filter(numero => numero !== 5)
+
+console.log(resultados)
