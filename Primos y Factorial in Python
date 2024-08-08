@@ -1,0 +1,53 @@
+#Hacer un programa donde debera indicar si el numero ingresado es primo o no
+
+number = 11
+primoValue = True
+
+for i in range(2, number):
+    if(number % i == 0):
+        primoValue = False
+
+if(primoValue == True):
+    print('el numero: ', number, ' Es primo')
+else:
+    print('el numero: ', number, ' No es primo')
+
+print('\n')
+#Hacer un programa donde una funcion debera capturar n cantidad de numeros y mostrara cuales son los unicos numeros primos
+
+def Primos(numero):
+    nPrimo = True
+
+    if((numero != 1) & (numero != 0)):
+        for i in range (2, numero):
+            if(numero % i == 0):
+                if(numero == i):
+                    nPrimo = True
+                else:
+                    nPrimo = False
+                    return nPrimo
+    else:
+        nPrimo = False
+    
+    return nPrimo
+
+cantidad = 12
+
+for i in range(0, cantidad):
+    if(Primos(i)):
+        print('El numero:', i, ' es primo')
+
+print('\n')
+#Hacer una programa donde una funcion recursiva,  mostrara el factorial de un numero ingresado
+
+def Recursiva(x):
+    factotrial = 1
+
+    if(x == 0):
+        x = 1
+    else:
+        factotrial = x * Recursiva(x - 1)
+
+    return factotrial
+
+print('Factortial: ', Recursiva(5))
